@@ -9,15 +9,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      allRestaurants: []
+      fetchRestaurants: []
     }
   }
 
   componentDidMount() {
     LunchService.getAllData().then(response => {
       console.log(response.data.results[0].name);
-      this.setState({allRestaurants: response.data.results});
-      console.log(this.state.allRestaurants);
+      this.setState({fetchRestaurants: response.data.results});
+      console.log(this.state.fetchRestaurants);
     });
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App container">
         <Header />
         <div className="row">
-          <AllRestaurants all={this.state.allRestaurants} />
+          <AllRestaurants allRestaurants={this.state.fetchRestaurants} />
         </div>
       </div>
     );
