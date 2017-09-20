@@ -13,6 +13,7 @@ body {
   background-color: #FADAD8;
   font-family: 'Quicksand', sans-serif;
   color:#534847;
+  font-size: 18px;
 }
 
 /* typography */
@@ -21,4 +22,8 @@ h1 {
   color: #9B8281;
   padding-bottom: 10px;
   border-bottom: 1px solid #534847;
+}
+
+header {
+  margin: 5% 0;
 }
