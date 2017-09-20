@@ -18,7 +18,8 @@ class SingleRestaurant extends Component {
     return (
       <div className="SingleRestaurant col-md-4">
         <p className="r-name">{name}</p>
-        <p>Location: {city}, {country}</p>
+        <p>Country: {country}</p>
+        <p>City: {city}</p>
         <p>Street: {street}</p>
         <img src={img} alt={name} />
         <p className="r-rating"><span>{rating}</span>/100</p>
