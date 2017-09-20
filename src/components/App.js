@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     LunchService.getAllData().then(response => {
-      console.log(response.data.results);
+      console.log(response.data.results[0].name);
       this.setState({allRestaurants: response.data.results});
       console.log(this.state.allRestaurants);
     });

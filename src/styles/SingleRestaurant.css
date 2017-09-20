@@ -1,0 +1,12 @@
+.SingleRestaurant {
+  float: left;
+}
+
+.r-name {
+  font-weight: 500;
+}
+
+img {
+  width: 200px;
+  height: 100px;
+}

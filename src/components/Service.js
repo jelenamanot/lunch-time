@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const url = 'https://api.myjson.com/bins/1dwzy1';
+const url = 'https://api.myjson.com/bins/yqnqh';
 
 class LunchService {
   getAllData() {
