@@ -7,7 +7,7 @@ class AllRestaurants extends Component {
 
   render() {
     return (
-      <div className="AllRestaurants col-md-12">
+      <div className="AllRestaurants container">
         {
           this.props.all.map((data, index) => {
             return(
