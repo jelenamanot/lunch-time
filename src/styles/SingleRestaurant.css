@@ -31,6 +31,12 @@
   font-weight: 500;
 }
 
+@media only screen and (max-width: 575px) {
+  .SingleRestaurant {
+    margin: 2%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .SingleRestaurant {
     border-left: none;

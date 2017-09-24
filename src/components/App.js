@@ -28,6 +28,9 @@ class App extends Component {
         <div className="row">
           <AllRestaurants allRestaurants={this.state.fetchRestaurants} />
         </div>
+        <footer>
+          <p className="text-center">&copy; <a href="http://www.linkedin.com/in/jelenanesicm">Jelena</a>, 2017.</p>
+        </footer>
       </div>
     );
   }
