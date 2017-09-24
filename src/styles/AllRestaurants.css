@@ -1,0 +1,17 @@
+/* Search restaurants */
+.wrap-input {
+  margin: 0 auto;
+}
+
+.search-name {
+  margin: 4% 0;
+  background-color: #FAEEED;
+  border: none;
+  border-bottom: 2px solid #9B8281;
+  border-radius: 0;
+  color: #9B8281;
+  font-weight: 500;
+}
+.search-name:focus {
+  border-bottom: 2px solid #9B8281;
+}
