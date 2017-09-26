@@ -26,7 +26,7 @@ class AllRestaurants extends Component {
         return data.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       }
     );
-    
+
     return (
       <div className="AllRestaurants container">
         <div className="row">
@@ -34,7 +34,6 @@ class AllRestaurants extends Component {
             <input
               placeholder="Type restaurant name here"
               className="form-control search-name" 
-              
               type="text"
               value={this.state.search}
               onChange={this.updateSearch.bind(this)}
@@ -57,6 +56,15 @@ class AllRestaurants extends Component {
               <SingleRestaurant key={index} restaurantInfo={data} />
             );
           })
+        }
+        </div>
+        <div className="row">
+        {
+           filteredRestaurants.length === 0 ?
+           <div className="col-md-12 text-center no-results">
+            <h2>there are no search results found</h2>
+            </div>
+           : <p></p>
         }
         </div>
       </div>

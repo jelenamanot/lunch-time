@@ -41,3 +41,9 @@
   background-image: none;
   border-color: #534847;
 }
+
+.no-results {
+  border: 1px solid #9B8281;
+  padding: 2% 5%;
+  margin: 2% 0;
+}
