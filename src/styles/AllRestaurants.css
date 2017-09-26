@@ -15,3 +15,29 @@
 .search-name:focus {
   border-bottom: 2px solid #9B8281;
 }
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset button */
+.btn-reset {
+  margin: 1% 0;
+  background-color: #9B8281;
+  border-color: #9B8281;
+  cursor: pointer;
+}
+.btn-reset:hover {
+  background-color: #534847;
+  border-color: #534847;
+}
+.btn-reset:focus {
+  box-shadow: none;
+}
+.btn-reset:active {
+  background-color: #9B8281;
+  background-image: none;
+  border-color: #534847;
+}

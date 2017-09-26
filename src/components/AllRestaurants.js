@@ -14,7 +14,11 @@ class AllRestaurants extends Component {
 
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0,20)});
-  } 
+  }
+
+  resetSearch(event) {
+    this.setState({search: ''});
+  }
 
   render() {
     let filteredRestaurants = this.props.allRestaurants.filter(
@@ -30,13 +34,21 @@ class AllRestaurants extends Component {
             <input
               placeholder="Type restaurant name here"
               className="form-control search-name" 
-              style={{display:'block'}}
+              
               type="text"
               value={this.state.search}
               onChange={this.updateSearch.bind(this)}
             />
           </div>
-        </div>
+        </div> {/*end input field*/}
+        <div className="row aligner">
+          <button 
+            className="btn btn-primary btn-reset"
+            onClick={this.resetSearch.bind(this)}
+          >
+          reset
+          </button>
+        </div> {/*end reset button*/}
         <div className="row">
         {
           filteredRestaurants.map((data, index) => {
