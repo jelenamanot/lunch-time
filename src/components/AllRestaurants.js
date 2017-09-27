@@ -8,8 +8,8 @@ class AllRestaurants extends Component {
   constructor() {
     super();
     this.state = {
-      search: '',
-      selectedValue: ''
+      search: ''//,
+      //selectedValue: ''
     }
   }
 
@@ -23,19 +23,22 @@ class AllRestaurants extends Component {
 
   // Trying out update country function
   updateCountry(e) {
-    this.setState({
-      selectedValue: e.target.value
-    });
-    console.log(this.state.selectedValue);
+    //this.setState({
+      //selectedValue: e.target.value
+    //});
+    //console.log(this.state.selectedValue);
 
     let selectedCountry = this.props.allRestaurants.filter(
       (data) => {
         let selection;
-        if(this.state.selectedValue === 'sr') {
+        if(e.target.value === 'sr') {
           selection = data.address.country === 'Serbia';
         }
-        else if(this.state.selectedValue === 'tn') {
+        else if(e.target.value === 'tn') {
           selection = data.address.country === 'The Netherlands'
+        }
+        else {
+          selection = data.name;
         }
         return selection;
       }
