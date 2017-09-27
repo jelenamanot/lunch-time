@@ -8,7 +8,8 @@ class AllRestaurants extends Component {
   constructor() {
     super();
     this.state = {
-      search: ''
+      search: '',
+      selectedValue: ''
     }
   }
 
@@ -18,6 +19,28 @@ class AllRestaurants extends Component {
 
   resetSearch(event) {
     this.setState({search: ''});
+  }
+
+  // Trying out update country function
+  updateCountry(e) {
+    this.setState({
+      selectedValue: e.target.value
+    });
+    console.log(this.state.selectedValue);
+
+    let selectedCountry = this.props.allRestaurants.filter(
+      (data) => {
+        let selection;
+        if(this.state.selectedValue === 'sr') {
+          selection = data.address.country === 'Serbia';
+        }
+        else if(this.state.selectedValue === 'tn') {
+          selection = data.address.country === 'The Netherlands'
+        }
+        return selection;
+      }
+    );
+    console.log(selectedCountry);
   }
 
   render() {
@@ -48,6 +71,16 @@ class AllRestaurants extends Component {
           reset
           </button>
         </div> {/*end reset button*/}
+        <div className="row">
+          <select
+            defaultValue={this.state.selectedValue}
+            onChange={this.updateCountry.bind(this)}
+          >
+            <option value="sv">Select</option>
+            <option value="sr">Serbia</option>
+            <option value="tn">The Netherlands</option>
+          </select>
+        </div>
         <div className="row">
         {
           filteredRestaurants.map((data, index) => {
