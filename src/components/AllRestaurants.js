@@ -8,8 +8,7 @@ class AllRestaurants extends Component {
   constructor() {
     super();
     this.state = {
-      search: ''//,
-      //selectedValue: ''
+      search: ''
     }
   }
 
@@ -23,11 +22,6 @@ class AllRestaurants extends Component {
 
   // Trying out update country function
   updateCountry(e) {
-    //this.setState({
-      //selectedValue: e.target.value
-    //});
-    //console.log(this.state.selectedValue);
-
     let selectedCountry = this.props.allRestaurants.filter(
       (data) => {
         let selection;
@@ -83,11 +77,10 @@ class AllRestaurants extends Component {
             <option value="sr">Serbia</option>
             <option value="tn">The Netherlands</option>
           </select>
-        </div>
+        </div> {/*end select*/}
         <div className="row">
         {
           filteredRestaurants.map((data, index) => {
-            // console.log('single restaurant - ', data.name, data);
             return(
               <SingleRestaurant key={index} restaurantInfo={data} />
             );
