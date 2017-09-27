@@ -71,7 +71,7 @@ class AllRestaurants extends Component {
           reset
           </button>
         </div> {/*end reset button*/}
-        <div className="row">
+        <div className="row aligner">
           <select
             defaultValue={this.state.selectedValue}
             onChange={this.updateCountry.bind(this)}

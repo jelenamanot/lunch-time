@@ -44,6 +44,15 @@
 
 .no-results {
   border: 1px solid #9B8281;
-  padding: 2% 5%;
-  margin: 7% 2% 0 2%;
+  padding: 20px 50px;
+  margin: 100px 20px 0 20px;
+}
+
+select {
+  margin-top: 15px;
+  background-color: #FAEEED;
+  color: #534847;
+  padding: 5px 20px; 
+  outline: none;
+  border: 2px solid #9B8281;
 }
