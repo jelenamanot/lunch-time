@@ -18,9 +18,9 @@ class SingleRestaurant extends Component {
     return (
       <div className="SingleRestaurant col-lg-4 col-md-6 col-sm-12">
         <p className="r-name">{name}</p>
-        <p>Country: {country}</p>
-        <p>City: {city}</p>
-        <p>Street: {street}</p>
+        <p>Country: {country} <br/>
+        City: {city}  <br/>
+        Street: {street}</p>
         <img src={img} alt={name} />
         <p className="r-rating"><span>{rating}</span>/100</p>
       </div>
