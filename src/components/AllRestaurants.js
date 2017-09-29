@@ -8,7 +8,8 @@ class AllRestaurants extends Component {
   constructor() {
     super();
     this.state = {
-      search: ''
+      search: '',
+      selectedValue: 'all' 
     }
   }
 
@@ -20,32 +21,33 @@ class AllRestaurants extends Component {
     this.setState({search: ''});
   }
 
-  // Trying out update country function
   updateCountry(e) {
-    let selectedCountry = this.props.allRestaurants.filter(
-      (data) => {
-        let selection;
-        if(e.target.value === 'sr') {
-          selection = data.address.country === 'Serbia';
-        }
-        else if(e.target.value === 'tn') {
-          selection = data.address.country === 'The Netherlands'
-        }
-        else {
-          selection = data.name;
-        }
-        return selection;
-      }
-    );
-    console.log(selectedCountry);
+    let selection;
+    if(e.target.value === 'Serbia') {
+      selection = 'Serbia';
+    }
+    else if(e.target.value === 'The Netherlands') {
+      selection = 'The Netherlands';
+    }
+    else if(e.target.value === 'all') {
+      selection = 'all';
+    }
+
+    this.setState({selectedValue: selection});
   }
 
   render() {
-    let filteredRestaurants = this.props.allRestaurants.filter(
-      (data) => {
+    let searchedRestaurants = this.props.allRestaurants.filter((data) => {
         return data.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       }
     );
+
+    let optionSelected = searchedRestaurants.filter((data, index) => {
+      if(this.state.selectedValue === 'all') {
+        return data.address.country;
+      };
+      return data.address.country === this.state.selectedValue;
+    });
 
     return (
       <div className="AllRestaurants container">
@@ -73,14 +75,14 @@ class AllRestaurants extends Component {
             defaultValue={this.state.selectedValue}
             onChange={this.updateCountry.bind(this)}
           >
-            <option value="sv">All</option>
-            <option value="sr">Serbia</option>
-            <option value="tn">The Netherlands</option>
+            <option value="all">All</option>
+            <option value="Serbia">Serbia</option>
+            <option value="The Netherlands">The Netherlands</option>
           </select>
         </div> {/*end select*/}
         <div className="row">
         {
-          filteredRestaurants.map((data, index) => {
+          optionSelected.map((data, index) => {
             return(
               <SingleRestaurant key={index} restaurantInfo={data} />
             );
@@ -89,7 +91,7 @@ class AllRestaurants extends Component {
         </div>
         <div className="row">
         {
-           filteredRestaurants.length === 0 ?
+          optionSelected.length === 0 ?
            <div className="col-md-12 text-center no-results">
             <h2>there are no search results found</h2>
             </div>
