@@ -82,20 +82,15 @@ class AllRestaurants extends Component {
         </div> {/*end select*/}
         <div className="row">
         {
+          optionSelected.length > 0 ?
           optionSelected.map((data, index) => {
             return(
               <SingleRestaurant key={index} restaurantInfo={data} />
             );
-          })
-        }
-        </div>
-        <div className="row">
-        {
-          optionSelected.length === 0 ?
-           <div className="col-md-12 text-center no-results">
+          }) :
+          <div className="col-md-12 text-center no-results">
             <h2>there are no search results found</h2>
-            </div>
-           : <p></p>
+          </div>
         }
         </div>
       </div>
