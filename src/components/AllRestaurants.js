@@ -73,7 +73,7 @@ class AllRestaurants extends Component {
             defaultValue={this.state.selectedValue}
             onChange={this.updateCountry.bind(this)}
           >
-            <option value="sv">Select</option>
+            <option value="sv">All</option>
             <option value="sr">Serbia</option>
             <option value="tn">The Netherlands</option>
           </select>

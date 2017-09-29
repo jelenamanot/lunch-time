@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <Header />
+        <Header heading="lunch time" subheading="Where to lunch today?" />
         <div className="row">
           <AllRestaurants allRestaurants={this.state.fetchRestaurants} />
         </div>
