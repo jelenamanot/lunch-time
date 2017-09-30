@@ -1,8 +1,9 @@
 # Lunch Time
 
 ### About
+
 This application is created in React. Create-react-app is used to generate starting files. 
-Data about restaurants is generated from an API. User can see all restaurants available and make a search for a certain restaurant by typing it's name in the search bar.
+Data about restaurants is generated from an API. User can see all restaurants available and make a search for a certain restaurant by typing it's name in the search bar. Also, user can choose country by selecting one of the options available.
 
 ### Installation & Running
 
